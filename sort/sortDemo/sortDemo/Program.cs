@@ -6,7 +6,7 @@ namespace sortDemo
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("选择排序");
+            //Console.WriteLine("————选择排序————");
             //var selectionSort = new SelectionSort();
             //for (int i = 0; i < 10; i++)
             //{
@@ -14,18 +14,29 @@ namespace sortDemo
             //}
             //Console.WriteLine();
 
-            Console.WriteLine("冒泡排序");
-            var bubbleSort = new BubbleSort();
-            for (int i = 0; i < 10; i++)
-            {
-                bubbleSort.RunTest();
-            }
-            Console.WriteLine();
-
+            //Console.WriteLine("————冒泡排序————");
+            //var bubbleSort = new BubbleSort();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    bubbleSort.RunTest();
+            //}
+            //Console.WriteLine();
             //Console.WriteLine("冒泡排序(最优情况)");
             //bubbleSort.RunTest(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
 
+
+            Console.WriteLine("————插入排序————");
+            var insertionSort = new InsertionSort();
+            for (int i = 0; i < 10; i++)
+            {
+                insertionSort.RunTest();
+            }
+            Console.WriteLine();
+
             Console.ReadLine();
+
+
+
         }
     }
 }
