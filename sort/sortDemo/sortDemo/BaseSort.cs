@@ -13,7 +13,16 @@ namespace sortDemo
             v1 = v2;
             v2 = value;
         }
-
+        protected void _swap(int[] arr, int index1, int index2)
+        {
+            if (index1 == index2)
+            {
+                return;
+            }
+            int value = arr[index1];
+            arr[index1] = arr[index2];
+            arr[index2] = value;
+        }
         public int[] BuildRandNums(int count, int max)
         {
             int[] arr = new int[count];

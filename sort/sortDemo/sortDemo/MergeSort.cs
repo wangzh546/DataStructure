@@ -12,64 +12,54 @@ namespace sortDemo
         public override int Sort(int[] arr)
         {
             _clacCount = 0;
-            _mergeSort2(aar1);
+            _sort(arr, 0, arr.Length);
             return _clacCount;
         }
-        private void _mergeSort(int[] arr)
+
+
+
+        /// <summary>
+        /// 排序
+        /// </summary>
+        /// <param name="arr">数组</param>
+        /// <param name="start">开始</param>
+        /// <param name="length">长度</param>
+        private void _sort(int[] arr, int start, int length)
         {
-
-            int[] arr1 = new int[arr.Length];
-            var half = arr.Length / 2;
-            int k = 0;//新数组指针
-            int i = 0;
-            int j = half;
-            while (k < arr.Length)
+            //只有一个数
+            if (length == 1)
             {
-                _clacCount++;//计数
-                if (i >= half)
-                {
-                    arr1[k] = arr[j];
-                    j++;
-                }
-                else if (j >= arr.Length)
-                {
-                    arr1[k] = arr[i];
-                    i++;
-                }
-                else
-                {
-                    if (arr[i] < arr[j])
-                    {
-                        arr1[k] = arr[i];
-                        i++;
-                    }
-                    else
-                    {
-                        arr1[k] = arr[j];
-                        j++;
-                    }
-                }
-
-                k++;
+                return;
             }
+            int mid = start + (length) / 2;
+            _sort(arr, start, mid - start);
+            _sort(arr, mid, start + length - mid);
 
-            //替换
-            for (int n = 0; n < arr.Length; n++)
-            {
-                arr[n] = arr1[n];
-            }
-
+            _merge(arr, start, mid, length);
         }
-        //优化
-        private void _mergeSort2(int[] arr)
+        /// <summary>
+        /// 归并
+        /// </summary>
+        /// <param name="arr">数组</param>
+        /// <param name="leftPtr">左指针</param>
+        /// <param name="rightPtr">右指针</param>
+        /// <param name="endPtr">结束指针</param>
+        private void _merge(int[] arr, int leftPtr, int rightPtr, int length)
         {
-
-            int[] arr1 = new int[arr.Length];
-            var half = arr.Length / 2;
+            if (leftPtr < 0 || rightPtr < 0)
+            {
+                throw new ArgumentException("leftPtr and rightPtr can not be empty");
+            }
+            if (rightPtr < leftPtr)
+            {
+                throw new ArgumentException("rightPtr must be greater than leftPtr");
+            }
+            int[] arr1 = new int[length];//新数组
             int k = 0;//新数组指针
-            int i = 0;
-            int j = half;
-            while (i < half && j < arr.Length)
+            int rightBound = leftPtr + length;//右边界
+            int i = leftPtr;
+            int j = rightPtr;
+            while (i < rightPtr && j < rightBound)
             {
                 _clacCount++;//计数
                 if (arr[i] < arr[j])
@@ -82,14 +72,14 @@ namespace sortDemo
                 }
             }
             //其一先排完成跳出循环，后面的直接接上
-            while (i < half) arr1[k++] = arr[i++];
-            while (j < arr.Length) arr1[k++] = arr[j++];
-            //替换
-            for (int n = 0; n < arr.Length; n++)
-            {
-                arr[n] = arr1[n];
-            }
+            while (i < rightPtr) arr1[k++] = arr[i++];
+            while (j < rightBound) arr1[k++] = arr[j++];
 
+            //替换
+            for (int n = 0; n < arr1.Length; n++)
+            {
+                arr[leftPtr + n] = arr1[n];
+            }
         }
     }
 }

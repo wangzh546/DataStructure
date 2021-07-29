@@ -8,8 +8,13 @@ namespace sortDemo
     {
         static void Main(string[] args)
         {
+            var selectionSort = new SelectionSort();
+            var bubbleSort = new BubbleSort();
+            var insertionSort = new InsertionSort();
+            var shellSort = new ShellSort();
+            var mergeSort = new MergeSort();
+            var quickSort = new QuickSort();
             //Console.WriteLine("————选择排序————");
-            //var selectionSort = new SelectionSort();
             //for (int i = 0; i < 10; i++)
             //{
             //    selectionSort.RunTest();
@@ -17,7 +22,6 @@ namespace sortDemo
             //Console.WriteLine();
 
             //Console.WriteLine("————冒泡排序————");
-            //var bubbleSort = new BubbleSort();
             //for (int i = 0; i < 10; i++)
             //{
             //    bubbleSort.RunTest();
@@ -28,7 +32,7 @@ namespace sortDemo
 
 
             //Console.WriteLine("————插入排序————");
-            var insertionSort = new InsertionSort();
+
             //for (int i = 0; i < 10; i++)
             //{
             //    insertionSort.RunTest();
@@ -36,7 +40,7 @@ namespace sortDemo
             //Console.WriteLine();
 
             //Console.WriteLine("————希尔排序————");
-            //var shellSort = new ShellSort();
+
             //for (int i = 0; i < 10; i++)
             //{
             //    shellSort.RunTest();
@@ -67,16 +71,44 @@ namespace sortDemo
             //    shellSort.Show($"希尔421，计算{calcCount2}次：", arr2);
             //}
 
-            Console.WriteLine("————归并排序————");
-            var mergeSort = new MergeSort();
-            var arr = new int[] { 1, 4, 6, 7, 10, 2, 3, 5, 8, 9, 11 };
-            var calcCount = mergeSort.Sort(arr);
-            mergeSort.Show("aa", arr);
+            //Console.WriteLine("————归并排序————");
+
             //for (int i = 0; i < 10; i++)
             //{
-
+            //    mergeSort.RunTest();
             //}
-            Console.WriteLine();
+            //Console.WriteLine("————希尔vs归并排序————");
+            //var arrs = new List<int[]>();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    arrs.Add(mergeSort.BuildRandNums(20, 1000));
+            //}
+            //foreach (var arr in arrs)
+            //{
+            //    var arr1 = arr.ToArray();
+            //    var arr2 = arr.ToArray();
+            //    mergeSort.Show("排序前：\t", arr);
+
+            //    var calcCount = mergeSort.Sort(arr1);
+            //    mergeSort.Show($"归并排序，计算{calcCount}次：", arr1);
+
+            //    var calcCount1 = shellSort.Sort(arr2);
+            //    shellSort.Show($"希尔排序，计算{calcCount1}次：", arr2);
+            //}
+            //Console.WriteLine();
+            //Console.WriteLine("————快速排序————");
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    quickSort.RunTest();
+            //}
+            //int[] arr = new int[] { 30, 54, 64, 97, 31, 18, 57, 51, 99, 29 };
+            //quickSort.Sort(arr);
+            //quickSort.Show("aa", arr);
+
+            //Math.Atan()
+
+
+
             Console.ReadLine();
 
 
