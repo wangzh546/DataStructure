@@ -59,7 +59,8 @@ namespace Interview
         //   提取最右侧1，剩下都改为0 n&(!n+1)
         public static int GetRightOne(int n)
         {
-            return n & (!n + 1);
+            //return n & (!n + 1);
+            return 0;
         }
         #endregion
     }
