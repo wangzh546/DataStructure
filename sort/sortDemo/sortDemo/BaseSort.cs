@@ -79,7 +79,11 @@ namespace sortDemo
             var calcCount = Sort(arr);
             Show("排序后:", arr);
             Check(arr, calcCount);
+
         }
         public abstract int Sort(int[] arr);
+
+
+        public virtual int Sort<T>(T[] arr) { return 0; }
     }
 }

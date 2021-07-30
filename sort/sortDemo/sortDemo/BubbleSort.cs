@@ -16,7 +16,6 @@ namespace sortDemo
             //        calcCount++;
             //        if (arr[j] > arr[j + 1])
             //        {
-
             //            _swap(ref arr[j], ref arr[j + 1]);
             //        }
             //    }

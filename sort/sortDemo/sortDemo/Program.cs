@@ -107,8 +107,11 @@ namespace sortDemo
 
             //Math.Atan()
 
-
-
+            HeapSort heapSort = new HeapSort();
+            for (int i = 0; i < 1000; i++)
+            {
+                heapSort.RunTest();
+            }
             Console.ReadLine();
 
 
